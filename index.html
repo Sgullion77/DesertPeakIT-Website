@@ -3,100 +3,1054 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Desert Peak IT | Small Business IT Support</title>
-  <meta name="description" content="Practical IT support, cybersecurity, and technology assistance for small businesses and nonprofits.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Desert Peak IT | Managed IT & Community Technology</title>
+  <meta name="description" content="Desert Peak IT provides small-business managed IT, network management, Microsoft 365 administration, cybersecurity support, and patient technology education for seniors and beginners in Las Vegas, Nevada.">
+  <meta name="theme-color" content="#101720">
+
+  <meta property="og:title" content="Desert Peak IT | Technology That Works for You">
+  <meta property="og:description" content="Reliable IT management for small businesses. Patient technology education for the community.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://desertpeakit.com">
+
+  <link rel="canonical" href="https://desertpeakit.com">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23101720'/%3E%3Cpath d='M12 72 39 37 52 53 65 27 89 72Z' fill='%23f59e0b'/%3E%3Cpath d='M12 78H89' stroke='%23fff' stroke-width='4'/%3E%3C/svg%3E">
+
   <style>
+    :root {
+      --bg: #101720;
+      --bg-soft: #151f2b;
+      --panel: #192533;
+      --panel-light: #202e3d;
+      --orange: #f59e0b;
+      --orange-light: #ffbd45;
+      --text: #f5f7fa;
+      --muted: #a9b6c5;
+      --line: rgba(255,255,255,.11);
+      --radius: 18px;
+      --max-width: 1160px;
+    }
+
     * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #101820;
-      color: #f5f7fa;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
+
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--orange);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .announcement {
+      padding: 9px 16px;
+      text-align: center;
+      background: #202b37;
+      color: #dce5ee;
+      font-size: .82rem;
+    }
+
+    .announcement span { color: var(--orange-light); }
+
     header {
-      padding: 22px 8%;
-      border-bottom: 1px solid #34404a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16,23,32,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
     }
-    header a { color: #f5f7fa; text-decoration: none; }
-    .hero {
-      padding: 85px 8%;
-      background: linear-gradient(135deg, #101820, #233e50);
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
-    .hero h1 { font-size: clamp(2.3rem, 6vw, 4rem); line-height: 1.1; }
-    .hero p { max-width: 620px; color: #d2dbe3; }
-    .button {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #e7a83e;
-      color: #101820;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-top: 12px;
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
     }
-    section { padding: 45px 8%; }
-    .services {
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      place-items: center;
+      border-radius: 12px;
+      background: var(--orange);
+      color: #101720;
+    }
+
+    .brand-mark svg { width: 31px; height: 31px; }
+
+    .brand-name {
+      display: block;
+      font-weight: 850;
+      letter-spacing: .07em;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    .brand-tag {
+      display: block;
+      color: var(--muted);
+      font-size: .65rem;
+      letter-spacing: .11em;
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: .9rem;
+      color: #d5dde6;
+    }
+
+    .nav-links a:not(.button):hover { color: var(--orange-light); }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 19px;
+      min-height: 46px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-weight: 750;
+      font-size: .91rem;
+      line-height: 1.3;
+      transition: transform .18s ease, background .18s ease;
+      cursor: pointer;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button-primary {
+      background: var(--orange);
+      color: #111923;
+    }
+
+    .button-primary:hover { background: var(--orange-light); }
+
+    .button-secondary {
+      border-color: rgba(255,255,255,.22);
+      color: var(--text);
+      background: rgba(255,255,255,.025);
+    }
+
+    .button-secondary:hover { background: rgba(255,255,255,.08); }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text);
+      border-radius: 9px;
+      padding: 9px 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 88px;
+      background:
+        radial-gradient(ellipse at 84% 25%, rgba(245,158,11,.13), transparent 34%),
+        linear-gradient(180deg, #121c27 0%, var(--bg) 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      right: -180px;
+      bottom: -290px;
+      border: 1px solid rgba(245,158,11,.18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px rgba(245,158,11,.025),
+                  0 0 0 90px rgba(245,158,11,.02);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--orange-light);
+      font-size: .79rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--orange);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin: 23px 0;
+      font-size: clamp(2.8rem, 5.4vw, 4.65rem);
+      line-height: 1.06;
+      letter-spacing: -.055em;
+      font-weight: 850;
+    }
+
+    h1 span { color: var(--orange); }
+
+    .hero-copy {
+      max-width: 590px;
+      color: #b8c4d0;
+      font-size: 1.12rem;
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      margin-top: 24px;
+      color: #8292a3;
+      font-size: .84rem;
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 24px;
+      background: linear-gradient(145deg, #202e3d, #151f2b);
+      box-shadow: 0 25px 80px rgba(0,0,0,.24);
+    }
+
+    .hero-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .hero-card-top strong { font-size: .95rem; }
+
+    .status-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #b5c5d4;
+      font-size: .74rem;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #71d6a1;
+    }
+
+    .service-preview {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .icon-box {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: rgba(245,158,11,.12);
+      color: var(--orange-light);
+      font-size: 1.25rem;
+    }
+
+    .service-preview strong {
+      display: block;
+      margin: 0 0 4px;
+      font-size: .96rem;
+    }
+
+    .service-preview p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .85rem;
+      line-height: 1.65;
+    }
+
+    .section { padding: 90px 0; }
+
+    .section-alt {
+      background: var(--bg-soft);
+      border-top: 1px solid rgba(255,255,255,.035);
+      border-bottom: 1px solid rgba(255,255,255,.035);
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading h2 {
+      margin: 14px 0;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -.04em;
+      line-height: 1.16;
+    }
+
+    .section-heading p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+
+    .card h3 {
+      margin: 17px 0 10px;
+      font-size: 1.17rem;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .93rem;
+      line-height: 1.8;
+    }
+
+    .business-section { background: var(--bg); }
+
+    .business-callout {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      margin-top: 30px;
+      padding: 24px 27px;
+      border: 1px solid rgba(245,158,11,.23);
+      border-radius: var(--radius);
+      background: rgba(245,158,11,.055);
+    }
+
+    .business-callout p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .business-callout strong { font-size: 1rem; }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .community-panel {
+      padding: 34px;
+      border: 1px solid rgba(245,158,11,.25);
+      border-radius: 24px;
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(245,158,11,.12), transparent 55%),
+        var(--panel);
+    }
+
+    .community-panel h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .community-panel > p {
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 23px 0 0;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      padding: 9px 0;
+      color: #d8e0e8;
+      font-size: .92rem;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--orange);
+      font-weight: 900;
+    }
+
+    .community-note {
+      margin-top: 17px;
+      color: #8292a3;
+      font-size: .8rem;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
     }
-    .service {
-      background: #1b2934;
-      border: 1px solid #344653;
-      border-radius: 10px;
-      padding: 22px;
+
+    .why-item {
+      padding: 22px 18px;
+      border-left: 2px solid var(--orange);
+      background: rgba(255,255,255,.025);
     }
+
+    .why-item strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: .98rem;
+    }
+
+    .why-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .contact-copy h2 {
+      margin: 14px 0;
+      font-size: clamp(2.1rem, 4vw, 3.1rem);
+      line-height: 1.12;
+      letter-spacing: -.04em;
+    }
+
+    .contact-copy > p {
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .contact-list {
+      margin-top: 28px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+    }
+
+    .contact-row .icon-box { width: 40px; height: 40px; }
+
+    .contact-row span {
+      display: block;
+      color: var(--muted);
+      font-size: .79rem;
+    }
+
+    .contact-row a {
+      display: inline-block;
+      margin-top: 2px;
+      overflow-wrap: anywhere;
+      font-size: .93rem;
+    }
+
+    .contact-row a:hover { color: var(--orange-light); }
+
+    .contact-panel {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--panel);
+    }
+
+    .contact-panel h3 { margin-bottom: 8px; font-size: 1.3rem; }
+
+    .contact-panel > p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .contact-options {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .contact-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .contact-option:hover {
+      border-color: rgba(245,158,11,.5);
+      background: rgba(245,158,11,.05);
+    }
+
+    .contact-option strong { display: block; font-size: .92rem; }
+    .contact-option small {
+      display: block;
+      color: var(--muted);
+      font-size: .78rem;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-option .arrow {
+      color: var(--orange);
+      font-size: 1.25rem;
+    }
+
+    .contact-disclaimer {
+      margin-top: 18px;
+      color: #8292a3;
+      font-size: .78rem;
+    }
+
     footer {
-      padding: 25px 8%;
-      color: #bdc8d1;
-      border-top: 1px solid #34404a;
+      padding: 35px 0;
+      border-top: 1px solid var(--line);
+      background: #0c1219;
+    }
+
+    .footer-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .footer-copy {
+      margin: 13px 0 0;
+      color: #8796a6;
+      font-size: .8rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #bac5d0;
+      font-size: .84rem;
+    }
+
+    .footer-links a:hover { color: var(--orange-light); }
+
+    .footer-bottom {
+      margin-top: 27px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: #748395;
+      font-size: .76rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero { padding: 75px 0; }
+      .hero-card { max-width: 600px; }
+      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .community-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(100% - 30px, var(--max-width)); }
+      .nav { min-height: 70px; }
+      .brand-tag { font-size: .56rem; }
+      .menu-toggle { display: inline-block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 18px 22px 23px;
+        background: #101720;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a:not(.button) { padding: 12px 0; }
+      .nav-links .button { margin-top: 10px; }
+      .hero { padding: 62px 0 55px; }
+      h1 { font-size: clamp(2.55rem, 12vw, 3.6rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-card { padding: 21px; }
+      .section { padding: 65px 0; }
+      .grid-3, .why-grid { grid-template-columns: 1fr; }
+      .card { padding: 23px; }
+      .business-callout { flex-direction: column; align-items: stretch; }
+      .community-panel, .contact-panel { padding: 23px; }
+      .footer-main { flex-direction: column; align-items: flex-start; }
+      .footer-links { gap: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
     }
   </style>
 </head>
+
 <body>
+  <div class="announcement">
+    Las Vegas, Nevada &nbsp;·&nbsp;
+    <span>Small-business IT & community technology education</span>
+  </div>
+
   <header>
-    <a href="#"><strong>DESERT PEAK IT</strong></a>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Desert Peak IT home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <path d="M7 77 35 39 49 56 65 25 94 77Z" fill="#101720"/>
+            <path d="M7 82H94" stroke="#101720" stroke-width="5" stroke-linecap="round"/>
+            <path d="M35 39 44 51 50 44" stroke="#F59E0B" stroke-width="3"/>
+          </svg>
+        </span>
+        <span>
+          <span class="brand-name">DESERT PEAK IT</span>
+          <span class="brand-tag">TECHNOLOGY. SECURITY. SUPPORT.</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-expanded="false" aria-controls="navLinks"
+        aria-label="Toggle navigation menu">Menu ☰</button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#business">Business IT</a>
+        <a href="#community">Community</a>
+        <a href="#about">About</a>
+        <a class="button button-primary" href="#contact">Let's Talk <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <div class="hero">
-      <h1>Technology that works for you.</h1>
-      <p>
-        Straightforward IT support, cybersecurity, and technology
-        guidance for small businesses and nonprofit organizations.
-      </p>
-      <a class="button" href="#services">Explore Our Services</a>
-    </div>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Your technology, handled</div>
+          <h1>Technology that works for you<span>.</span></h1>
+          <p class="hero-copy">
+            Reliable IT management for small businesses.
+            Patient, practical technology education for the community.
+            One local IT partner, focused on keeping technology useful,
+            secure, and easier to understand.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#business">
+              IT Services for Businesses <span aria-hidden="true">→</span>
+            </a>
+            <a class="button button-secondary" href="#community">
+              Community Tech Support
+            </a>
+          </div>
+          <p class="hero-note">
+            Personal service. Practical solutions. Technology without the runaround.
+          </p>
+        </div>
 
-    <section id="services">
-      <h2>How We Can Help</h2>
-      <div class="services">
-        <div class="service">
-          <h3>Small Business IT</h3>
-          <p>Practical support for computers, networks, and everyday IT issues.</p>
-        </div>
-        <div class="service">
-          <h3>Cybersecurity</h3>
-          <p>Security-minded guidance for accounts, devices, and business networks.</p>
-        </div>
-        <div class="service">
-          <h3>Nonprofit & Community Support</h3>
-          <p>Technology guidance and digital skills education for underserved communities.</p>
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <strong>Your IT partner, from day one.</strong>
+            <span class="status-label"><span class="status-dot"></span> Built around your needs</span>
+          </div>
+
+          <div class="service-preview">
+            <div class="icon-box" aria-hidden="true">⌘</div>
+            <div>
+              <strong>Managed IT & Networks</strong>
+              <p>Network administration, firewalls, connectivity, device management, and troubleshooting.</p>
+            </div>
+          </div>
+
+          <div class="service-preview">
+            <div class="icon-box" aria-hidden="true">▤</div>
+            <div>
+              <strong>Microsoft 365 & User Accounts</strong>
+              <p>Account administration, access controls, onboarding, offboarding, and collaboration tools.</p>
+            </div>
+          </div>
+
+          <div class="service-preview">
+            <div class="icon-box" aria-hidden="true">◇</div>
+            <div>
+              <strong>Community Technology Education</strong>
+              <p>Friendly guidance for seniors and beginners learning everyday digital skills.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>Let's Talk Technology</h2>
-      <p>Contact us to discuss your organization's IT needs.</p>
-      <!-- Add your business email or contact form here. -->
+    <section class="section business-section" id="business">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Business IT services</div>
+          <h2>Your IT department, without building one from scratch.</h2>
+          <p>
+            Small businesses need dependable technology, thoughtful security,
+            and someone who understands how their systems fit together.
+            Desert Peak IT helps manage the technology behind your day-to-day operations.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">⌘</div>
+            <h3>Network & Firewall Management</h3>
+            <p>
+              Network administration, firewall configuration, VPN connectivity,
+              wireless networking, troubleshooting, and network documentation.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">▣</div>
+            <h3>Microsoft 365 & Identity</h3>
+            <p>
+              Microsoft 365 administration, Entra ID, user accounts, permissions,
+              multifactor authentication, and access management.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">⇄</div>
+            <h3>Employee Onboarding</h3>
+            <p>
+              Account setup, access changes, device preparation, and organized
+              offboarding when employees join or leave your business.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">⬡</div>
+            <h3>Security & Updates</h3>
+            <p>
+              Practical security improvements, patch management, endpoint
+              protection coordination, and safer account configurations.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">▤</div>
+            <h3>Computer & User Support</h3>
+            <p>
+              Troubleshooting, software issues, workstation setup, printer
+              problems, and everyday technology support for your team.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-box" aria-hidden="true">◷</div>
+            <h3>Backup & Continuity Planning</h3>
+            <p>
+              Help planning backup strategies, recovery procedures, and
+              connectivity options to reduce disruption when things go wrong.
+            </p>
+          </article>
+        </div>
+
+        <div class="business-callout">
+          <div>
+            <strong>Need an IT partner who gets to know your business?</strong>
+            <p>Let's talk about your current setup, recurring problems, and goals.</p>
+          </div>
+          <a class="button button-primary"
+             href="mailto:Seth@desertpeakit.com?subject=Small%20Business%20IT%20Inquiry">
+            Discuss Your IT Needs ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="community">
+      <div class="container community-grid">
+        <div>
+          <div class="eyebrow">Technology for everyone</div>
+          <h2 style="font-size:clamp(2rem,4vw,3.1rem);line-height:1.16;letter-spacing:-.04em;margin:16px 0;">
+            Technology shouldn't leave anyone behind.
+          </h2>
+          <p style="color:var(--muted);line-height:1.9;">
+            Email, smartphones, online accounts, and new technology can feel
+            overwhelming when nobody takes the time to explain them.
+            Desert Peak IT aims to make learning approachable, practical,
+            and free from judgment.
+          </p>
+          <p style="color:var(--muted);line-height:1.9;">
+            Our community technology initiative is intended to help seniors,
+            beginners, and community organizations build confidence with
+            the digital tools they use every day.
+          </p>
+          <a class="button button-secondary" href="#contact">
+            Ask About Community Support →
+          </a>
+        </div>
+
+        <div class="community-panel">
+          <div class="icon-box" aria-hidden="true">♡</div>
+          <h3>Community Tech Education</h3>
+          <p>Learn at your own pace, ask questions, and build skills that make everyday technology less intimidating.</p>
+
+          <ul class="check-list">
+            <li>Computer basics, files, and everyday tasks</li>
+            <li>Email setup and safe email practices</li>
+            <li>Internet browsing and Google basics</li>
+            <li>Smartphones, video calls, and useful apps</li>
+            <li>Password safety, scams, and online security</li>
+            <li>Practical introductions to modern AI tools</li>
+          </ul>
+
+          <p class="community-note">
+            Training formats, availability, and any associated costs
+            can be discussed when you get in touch.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">The Desert Peak approach</div>
+          <h2>Good IT is about people, not just equipment.</h2>
+          <p>
+            Technology should make work easier and daily life more accessible.
+            Our approach emphasizes practical solutions, clear communication,
+            and security that makes sense for the people using it.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-item">
+            <strong>Personal attention</strong>
+            <p>Work directly with your IT contact instead of getting lost in a support queue.</p>
+          </div>
+          <div class="why-item">
+            <strong>Practical security</strong>
+            <p>Improve security with sensible controls, clear documentation, and thoughtful planning.</p>
+          </div>
+          <div class="why-item">
+            <strong>Clear communication</strong>
+            <p>Understand the problem, the options, and the next steps without unnecessary jargon.</p>
+          </div>
+          <div class="why-item">
+            <strong>Community-minded</strong>
+            <p>Make technology more approachable for people who need extra guidance and support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Let's make technology work better.</h2>
+          <p>
+            Whether you're a small business looking for IT support or someone
+            interested in community technology education, we'd like to hear
+            what you need help with.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-row">
+              <div class="icon-box" aria-hidden="true">✉</div>
+              <div>
+                <span>General inquiries</span>
+                <a href="mailto:Seth@desertpeakit.com">Seth@desertpeakit.com</a>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="icon-box" aria-hidden="true">⌘</div>
+              <div>
+                <span>Technical support</span>
+                <a href="mailto:Support@desertpeakit.com">Support@desertpeakit.com</a>
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="icon-box" aria-hidden="true">$</div>
+              <div>
+                <span>Billing & account questions</span>
+                <a href="mailto:Billing@desertpeakit.com">Billing@desertpeakit.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-panel">
+          <h3>How can we help?</h3>
+          <p>Choose the option that best describes your inquiry to start an email.</p>
+
+          <div class="contact-options">
+            <a class="contact-option"
+               href="mailto:Seth@desertpeakit.com?subject=Small%20Business%20IT%20Inquiry">
+              <span>
+                <strong>I'm looking for business IT services</strong>
+                <small>Managed IT, networking, Microsoft 365, and security</small>
+              </span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <a class="contact-option"
+               href="mailto:Seth@desertpeakit.com?subject=Community%20Technology%20Education">
+              <span>
+                <strong>I'm interested in community tech help</strong>
+                <small>Computer basics, senior support, and learning opportunities</small>
+              </span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <a class="contact-option"
+               href="mailto:Support@desertpeakit.com?subject=Technical%20Support%20Inquiry">
+              <span>
+                <strong>I need technical support</strong>
+                <small>Questions about support and troubleshooting</small>
+              </span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <p class="contact-disclaimer">
+            These links open your email application. Sending an email does
+            not establish a service agreement or guarantee immediate support.
+            Please don't email passwords or other sensitive credentials.
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    &copy; 2026 Desert Peak IT. All rights reserved.
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <a class="brand" href="#home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 100 100" fill="none">
+                <path d="M7 77 35 39 49 56 65 25 94 77Z" fill="#101720"/>
+                <path d="M7 82H94" stroke="#101720" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span>
+              <span class="brand-name">DESERT PEAK IT</span>
+              <span class="brand-tag">TECHNOLOGY. SECURITY. SUPPORT.</span>
+            </span>
+          </a>
+          <p class="footer-copy">Independent IT services and community technology education.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#business">Business IT</a>
+          <a href="#community">Community</a>
+          <a href="#about">About</a>
+          <a href="mailto:Seth@desertpeakit.com">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Desert Peak IT. All rights reserved.</span>
+        <span> Las Vegas, Nevada</span>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
 </body>
 </html>
