@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://desertpeakit.com/sitemap.xml
